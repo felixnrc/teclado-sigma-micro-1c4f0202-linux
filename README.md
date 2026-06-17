@@ -1,6 +1,11 @@
 # Teclado SiGma Micro `1c4f:0202` en Linux — arreglo completo
 
+[![GitHub stars](https://img.shields.io/github/stars/felixnrc/teclado-sigma-micro-1c4f0202-linux?style=social)](https://github.com/felixnrc/teclado-sigma-micro-1c4f0202-linux/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 🌐 **[Read this in English →](README.en.md)**
+
+> ⭐ Si este arreglo te sirvió, deja una estrella — ayuda a otros con el mismo teclado a encontrarlo.
 
 Solución para los teclados USB **SiGma Micro "Usb KeyBoard"** (ID de hardware
 `1c4f:0202`, vendidos con marcas genéricas como *Soul*, *Necnon*, etc.) cuyas

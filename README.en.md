@@ -1,6 +1,11 @@
 # SiGma Micro `1c4f:0202` keyboard on Linux — complete fix
 
+[![GitHub stars](https://img.shields.io/github/stars/felixnrc/teclado-sigma-micro-1c4f0202-linux?style=social)](https://github.com/felixnrc/teclado-sigma-micro-1c4f0202-linux/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 🌐 **[Leer en español →](README.md)**
+
+> ⭐ If this fix helped you, leave a star — it helps others with the same keyboard find it.
 
 Fix for the **SiGma Micro "Usb KeyBoard"** USB keyboards (hardware ID
 `1c4f:0202`, sold under generic brands such as *Soul*, *Necnon*, etc.) whose
