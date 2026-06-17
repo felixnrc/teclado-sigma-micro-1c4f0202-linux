@@ -1,5 +1,7 @@
 # Teclado SiGma Micro `1c4f:0202` en Linux — arreglo completo
 
+🌐 **[Read this in English →](README.en.md)**
+
 Solución para los teclados USB **SiGma Micro "Usb KeyBoard"** (ID de hardware
 `1c4f:0202`, vendidos con marcas genéricas como *Soul*, *Necnon*, etc.) cuyas
 **teclas multimedia no funcionan** en Linux y que, en algunos casos, **se
@@ -97,9 +99,18 @@ en todo el sistema, sin recompilar nada al actualizar el kernel.
 ## Requisitos
 
 - Linux con `systemd` y `udev` (probado en **Fedora 44**, kernel 7.0).
-- `python3`, y los paquetes `python3-pyusb` y `python3-evdev` (los instala el
-  script).
+- `python3` con **PyUSB** y **python-evdev** (los instala el script).
 - El módulo `uinput` (el script lo carga y lo deja persistente).
+
+El instalador detecta tu distribución e instala los paquetes correctos:
+
+| Distribución | Gestor | Paquetes |
+|---|---|---|
+| Fedora / RHEL | `dnf` | `python3-pyusb` `python3-evdev` |
+| Debian / Ubuntu | `apt` | `python3-usb` `python3-evdev` |
+| Arch / Manjaro | `pacman` | `python-pyusb` `python-evdev` |
+| openSUSE | `zypper` | `python3-pyusb` `python3-evdev` |
+| Otras | — | `pip install pyusb evdev` |
 
 ## Instalación (recomendada — con teclas multimedia)
 
@@ -113,8 +124,7 @@ Después **desconecta y reconecta el cable USB** del teclado y prueba las teclas
 multimedia.
 
 El instalador:
-- Instala `python3-pyusb` y `python3-evdev` (vía `dnf`; en otras distros instala
-  los equivalentes a mano).
+- Instala PyUSB y python-evdev con el gestor de tu distro (ver tabla arriba).
 - Carga el módulo `uinput` al arranque.
 - Copia el daemon a `/usr/local/bin/sigma-volumen-daemon.py`.
 - Escribe las reglas `udev` en `/etc/udev/rules.d/99-sigma-keyboard.rules`.

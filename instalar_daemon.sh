@@ -13,7 +13,19 @@ DAEMON_SRC="$SRC_DIR/volumen_daemon.py"
 DAEMON_DST="/usr/local/bin/sigma-volumen-daemon.py"
 
 echo "==> 1/6 Instalando dependencias de Python (pyusb, evdev)..."
-dnf install -y python3-pyusb python3-evdev
+if command -v dnf &>/dev/null; then
+  dnf install -y python3-pyusb python3-evdev
+elif command -v apt-get &>/dev/null; then
+  apt-get update && apt-get install -y python3-usb python3-evdev
+elif command -v pacman &>/dev/null; then
+  pacman -Sy --needed --noconfirm python-pyusb python-evdev
+elif command -v zypper &>/dev/null; then
+  zypper install -y python3-pyusb python3-evdev
+else
+  echo "No reconozco tu gestor de paquetes. Instala manualmente PyUSB y python-evdev"
+  echo "y vuelve a ejecutar este script (puedes usar: pip install pyusb evdev)."
+  exit 1
+fi
 
 echo "==> 2/6 Asegurando que el módulo uinput se cargue al arranque..."
 modprobe uinput || true
